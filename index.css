@@ -1,0 +1,234 @@
+/*Dia 9*/
+.fondo {
+    padding: 5%;
+    background: #00244b;
+    height: 300px;
+    color: white;
+}
+
+.contenedor_nieve{
+    width: 100%;
+    height: 100%;
+}
+
+.nieve {
+    position: absolute;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%; /*borde de los copos, para que sean circulares*/
+    opacity: 0.8;
+    animation: fall linear infinite; /*tipo de animacion*/
+}
+
+@keyframes fall {/* Animación de caída */
+    0% {
+        transform: translateY(80px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(495px);
+        opacity: 0.3;
+    }
+}
+
+
+/* Dia 10 */
+.contenedor_dia10{
+    position: relative;
+    background-color: brown;
+    width: 100px;
+    border: 3px solid rgb(255, 166, 0);
+}
+
+.regalo img {
+    position: absolute;
+    top: -20px;
+    left: 80%;
+    width: 30px;
+}
+
+
+/* Dia 11 */
+.contenedor_imagenes_dia11{
+    display: grid; /*para poder usar filas y columnas, y no solamente una de estas */
+    grid-template-columns: repeat(3, 0.1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.imagenes {
+    display: flex; /*para convertir el contenedor en flexible y poder alinear los elementos de dentro*/
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #17085e;
+}
+
+
+/*Dia 12*/
+.menu {
+    width: 100%;
+    background: #239347;
+    padding: 10px 1; /*primer 10px es para arriba y abajo, y el 1 para izquierda y derecha*/
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; /*para quitar los puntos de la lista*/
+    display: flex;
+    justify-content: space-around; /* reparte las opciones */
+    align-items: center;
+}
+
+.menu li {
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer; /*cuando el cursor está arriba de alguna palabra, se pone para poder pinchar en ella*/
+}
+
+.menu li:hover { /*para que al estar con el puntero encima de la palabra se resalte*/
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    transform: scale(1.05); /*aumenta un poco de tamaño la palabra cuando estás con el cursor arriba*/
+}
+
+
+/*Dia 13*/
+.postal{
+    background-color: #ffbb00;
+    text-align: center;
+    padding: 20px;
+}
+.postal p{
+    color: white;
+}
+
+@media (max-width: 600px) { /*cuando la pantalla es menor o igual a 600px se cambia de color*/
+    .postal {
+        background-color: #a15aff;
+    }
+}
+
+
+/*Dia 14*/
+:root{
+    --color-fondo: #ffffff;
+    --color-borde: #ed5e3d;
+    --color-boton: #d4311f;
+    --color-boton-hover: #40c912;
+}
+
+.tarjeta{
+    width: 150px;
+    height: 70px;
+    display: flex;
+    justify-content: center; /* centra verticalmente */
+    align-items: center;     /* centra horizontalmente */
+    background: var(--color-fondo);
+    border: 2px solid var(--color-borde);
+}
+
+.boton{
+    background: var(--color-boton);
+    color: white;
+    cursor: pointer; /*para que sea un boton y se pueda pulsar*/
+}
+
+.boton:hover { /*cuando se coloca el cursor encima de este elemento, se activan los estilos que haya dentro de este*/
+    background: var(--color-boton-hover);
+}
+
+
+/*Dia 15*/
+.tarjeta_desplegable{
+    background-color: rgb(255, 136, 0);
+    width: 50px;
+    height: 100px;
+}
+
+.texto{
+    padding: 20px;
+    text-align:center;
+}
+
+.primero{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.segundo{
+    display: flex;
+    align-items: center;
+    background-color: red;
+    color: white;
+    height: 50px;
+}
+
+.tarjeta_desplegable:hover{
+    width: 300px;
+    height: 100px;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out; /*transicion suave de tamaño*/
+}
+
+
+/*Dia 16*/
+table{
+    border-collapse: collapse;
+    border: 1px solid;
+    width: 100%;
+}
+
+th, td{
+    padding: 10px;
+    text-align: left;
+}
+
+thead{
+    background-color: #239347;
+}
+
+tr{
+    border: 1px solid;
+}
+
+td{
+    border: 1px solid;
+}
+
+th{
+    border: 1px solid;
+}
+
+tbody tr:nth-child(even){
+    background-color: rgb(182, 182, 182);
+}
+tbody tr:nth-child(odd){
+    background-color: rgb(255, 255, 255);
+}
+
+
+/*Dia 17*/
+.copo {
+    position: relative;
+    width: 40px;
+    height: 4px;
+    background: #001a66;
+}
+
+.copo::before, .copo::after {
+    content: ""; /*para que aparezcan las barras secundarias*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    background: #001a66;
+    transform: translate(-50%, -50%) rotate(40deg); /*con translate las barras quedan centradas en el mismo punto que la principal*/
+}
+
+.copo::after {
+    transform: translate(-50%, -50%) rotate(-40deg);
+}
