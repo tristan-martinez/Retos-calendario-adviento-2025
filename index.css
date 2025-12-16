@@ -28,7 +28,7 @@
         opacity: 1;
     }
     100% {
-        transform: translateY(483px);
+        transform: translateY(500px);
         opacity: 0.3;
     }
 }
