@@ -2,7 +2,7 @@
 .fondo {
     padding: 5%;
     background: #00244b;
-    height: 300px;
+    height: 200px;
     color: white;
 }
 
@@ -28,7 +28,7 @@
         opacity: 1;
     }
     100% {
-        transform: translateY(700px);
+        transform: translateY(385px);
         opacity: 0.3;
     }
 }
